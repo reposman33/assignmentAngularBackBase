@@ -1,0 +1,25 @@
+.city {
+    width: 190px;
+
+    &.selected {
+        opacity: 0.5;
+        cursor: pointer; 
+    }
+}
+
+.infoBox {
+    padding: 5px;
+    text-align: center;
+
+    button:nth-child(1) {
+        margin-right: 1rem;
+    }
+
+    button:nth-child(2) {
+        margin-left: 1rem;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
