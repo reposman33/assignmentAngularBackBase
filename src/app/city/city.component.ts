@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { AppComponent } from '../app.component'; 
 import { WeatherApi } from '../services/weatherApi';
@@ -10,19 +10,15 @@ import { WeatherCurrent, WeatherForecast } from '../interfaces/weather';
   templateUrl: './city.component.html',
   styleUrls: ['./city.component.scss']
 })
-export class CityComponent implements OnInit {
+export class CityComponent {
   @Input() cityName: string;
   @Input() cityCode: string;
   imgPath: string;
   isSelected: boolean = false;
   
-  constructor(private appComponent: AppComponent,
-            private weatherService: WeatherApi,
-            private communicatorService: CommunicatorService) {
+  constructor(private appComponent: AppComponent, private weatherService: WeatherApi, private communicatorService: CommunicatorService) {
     this.imgPath = appComponent.imgPath;
   }
-
-  ngOnInit() { }
 
   getCurrentWeather () {
     this.weatherService.getCurrentWeather(this.cityCode)
@@ -31,7 +27,7 @@ export class CityComponent implements OnInit {
         temperatureCurrent: data['main'].temp,
         windSpeedCurrent: data['wind'].speed
       });
-    }
+    });
   }
 
   getForecastWeather () {
@@ -41,5 +37,6 @@ export class CityComponent implements OnInit {
         temperatureForecast: data['list'][0].main.temp,
         windSpeedForecast: data['list'][0].wind.speed
       });
+    });
   }
 }

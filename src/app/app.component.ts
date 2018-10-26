@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommunicatorService } from './services/communicator.service';
 import { WeatherCurrent, WeatherForecast } from './interfaces/weather';
 
@@ -8,6 +8,14 @@ import { WeatherCurrent, WeatherForecast } from './interfaces/weather';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {  
+  @ViewChild('iconTemp') iconTemp: ElementRef;
+  @ViewChild('iconWindspeed') iconWindspeed: ElementRef;
+  animationConfig: {
+    animation: true,
+    placement: 'auto',
+    selector: 'img',
+    trigger: 'hover'
+  };
   temperatureCurrent: number;
   windSpeedCurrent: number;
   temperatureForecast: number;
@@ -25,4 +33,5 @@ export class AppComponent {
       this.windspeedForecast = data.windSpeedForecast
     });
   }
+ 
 }

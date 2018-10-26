@@ -1,5 +1,6 @@
-.city {
+.cityImg {
     width: 190px;
+    border-radius: 25px;
 
     &.selected {
         opacity: 0.5;
@@ -10,6 +11,11 @@
 .infoBox {
     padding: 5px;
     text-align: center;
+    white-space: nowrap;
+
+    button {
+        margin-top: 1rem;
+    }
 
     button:nth-child(1) {
         margin-right: 1rem;

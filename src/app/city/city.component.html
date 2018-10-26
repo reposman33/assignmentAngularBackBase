@@ -2,11 +2,11 @@
   <div>
     <img src="{{imgPath + cityName + '.jpg'}}"
       alt="{{cityName}}"
-      [ngClass]="{'city': true, 'selected': isSelected}">
+      [ngClass]="{'cityImg': true, 'selected': isSelected}">
   </div>
   
-  <div [ngClass]="{'hidden': !isSelected}" class="infoBox">
-      <button (click)="getCurrentWeather()">Current</button>
-      <button (click)="getForecastWeather()">Forecast</button>
+  <div [ngClass]="{'hidden': !isSelected, 'nowrap': true, 'col-1': true}" class="infoBox">
+      <button type="button" class="btn btn-outline-warning" (click)="getCurrentWeather()" title="Click to see current weatherconditions">Current</button>
+      <button type="button" class="btn btn-outline-warning" (click)="getForecastWeather()" title="Click to see future weatherconditions">Forecast</button>
   </div>
 </div>
