@@ -13,10 +13,22 @@ export class CommunicatorService {
 
   constructor() { }
 
+  /**
+   * by calling this method other components can broadcast current weather data to whoever is subscribed 
+   * @sendCurrentWeather
+   * @param {WeatherCurrent} data - current weather data to be broadcasted
+   * @returns void
+   */
   sendCurrentWeather(data: WeatherCurrent) {
     this.WeatherCurrentSubject.next(data);
   }
 
+  /**
+   * by calling this method other components can broadcast forecast weather data to whoever is subscribed 
+   * @sendForecastWeather
+   * @param {WeatherForecast} data - forecast weather data to be broadcasted
+   * @returns void
+   */
   sendForecastWeather(data: WeatherForecast) {
     this.WeatherForecastSubject.next(data);
   }
