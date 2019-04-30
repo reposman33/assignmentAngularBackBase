@@ -1,32 +1,30 @@
 .weatherBackground {
-     background-image: url('../assets/img/Background.jpg');
+  background-image: url("../assets/img/Background.jpg");
 }
 
 .icon {
-    width: 130px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 25px;
+  width: 130px;
+  background: transparent;
+  border-radius: 25px;
 }
 
 .typeFace {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
 
-    &.title {
-        font-weight: bold;
-        font-size: 2rem;
-        color: rgb(255, 255, 255);
-    }
-    
-    &.description {
-        font-size: 1.5rem;
-    }
-    
-    &.text-color--alert {
-        color: red;
-    }
+  &.title {
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+  }
+
+  &.description {
+    font-size: 1.5rem;
+  }
+
+  &.text-color--alert {
+    color: red;
+  }
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }

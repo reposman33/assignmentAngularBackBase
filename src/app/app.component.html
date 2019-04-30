@@ -1,55 +1,135 @@
 <div class="container my-5">
-    <div class="row flex-nowrap">
-        <div class="col-md"><app-city cityName="Vilnius"
-                            cityCode="Vilnius,LT"
-                            (mouseover)="currentCity='Vilnius'"
-                            (mouseleave)="currentCity=null;temperatureCurrent=null;temperatureForecast=null;windSpeedCurrent=null;windspeedForecast=null"></app-city></div>
-        <div class="col-md"><app-city
-                            cityName="Minsk"
-                            cityCode="Minsk,BY"
-                            (mouseover)="currentCity='Minsk'"
-                            (mouseleave)="currentCity=null;temperatureCurrent=null;temperatureForecast=null;windSpeedCurrent=null;windspeedForecast=null"></app-city></div>
-        <div class="col-md"><app-city
-                            cityName="Reykjavik"
-                            cityCode="Reykjavik,IS"
-                            (mouseover)="currentCity='Reykjavik'"
-                            (mouseleave)="currentCity=null;temperatureCurrent=null;temperatureForecast=null;windSpeedCurrent=null;windspeedForecast=null"></app-city></div>
-        <div class="col-md"><app-city
-                            cityName="Helsinki"
-                            cityCode="Helsinki,FI"
-                            (mouseover)="currentCity='Helsinki'"
-                            (mouseleave)="currentCity=null;temperatureCurrent=null;temperatureForecast=null;windSpeedCurrent=null;windspeedForecast=null"></app-city></div>
-        <div class="col-md"><app-city
-                            cityName="Stockholm"
-                            cityCode="Stockholm,SE"
-                            (mouseover)="currentCity='Stockholm'"
-                            (mouseleave)="currentCity=null;temperatureCurrent=null;temperatureForecast=null;windSpeedCurrent=null;windspeedForecast=null"></app-city></div>
+  <div class="row flex-nowrap">
+    <div class="col-md">
+      <app-city
+        cityName="Vilnius"
+        cityCode="Vilnius,LT"
+        (mouseover)="currentCity = 'Vilnius'"
+        (mouseleave)="
+          currentCity = null;
+          temperatureCurrent = null;
+          temperatureForecast = null;
+          windSpeedCurrent = null;
+          windspeedForecast = null
+        "
+      ></app-city>
     </div>
+    <div class="col-md">
+      <app-city
+        cityName="Minsk"
+        cityCode="Minsk,BY"
+        (mouseover)="currentCity = 'Minsk'"
+        (mouseleave)="
+          currentCity = null;
+          temperatureCurrent = null;
+          temperatureForecast = null;
+          windSpeedCurrent = null;
+          windspeedForecast = null
+        "
+      ></app-city>
+    </div>
+    <div class="col-md">
+      <app-city
+        cityName="Reykjavik"
+        cityCode="Reykjavik,IS"
+        (mouseover)="currentCity = 'Reykjavik'"
+        (mouseleave)="
+          currentCity = null;
+          temperatureCurrent = null;
+          temperatureForecast = null;
+          windSpeedCurrent = null;
+          windspeedForecast = null
+        "
+      ></app-city>
+    </div>
+    <div class="col-md">
+      <app-city
+        cityName="Helsinki"
+        cityCode="Helsinki,FI"
+        (mouseover)="currentCity = 'Helsinki'"
+        (mouseleave)="
+          currentCity = null;
+          temperatureCurrent = null;
+          temperatureForecast = null;
+          windSpeedCurrent = null;
+          windspeedForecast = null
+        "
+      ></app-city>
+    </div>
+    <div class="col-md">
+      <app-city
+        cityName="Stockholm"
+        cityCode="Stockholm,SE"
+        (mouseover)="currentCity = 'Stockholm'"
+        (mouseleave)="
+          currentCity = null;
+          temperatureCurrent = null;
+          temperatureForecast = null;
+          windSpeedCurrent = null;
+          windspeedForecast = null
+        "
+      ></app-city>
+    </div>
+  </div>
 
-    <div class="row typeFace description">
-        <div class="col-md-5 offset-md-4">Hover over a city and click a button</div>
-    </div>
+  <div class="row typeFace description">
+    <div class="col-md-5 offset-md-4"></div>
+  </div>
 
-    <div class="row my-5 typeFace title">
-      <div class="col-md text-left" [ngClass]="{'hidden': !currentCity}">Weather in {{currentCity}}:</div>
-      <div class="col-md text-right">Current</div>
-      <div class="col-md text-right">3 hour forecast</div>
-    </div>  
+  <div class="row my-5 typeFace title">
+    Weather in
+    <div class="col-md text-left" [ngClass]="{ hidden: !currentCity }">
+      {{ currentCity }}:
+    </div>
+    <div class="col-md">Current</div>
+    <div class="col-md text-left">3 hour forecast</div>
+  </div>
 
-    <div class="row my-5 typeFace title">
-        <div class="col-md">
-          <img #iconTemp src="{{imgPath + 'temperature.png'}}" alt="" class="icon" title="Temperature">
-        </div>
-        <div class="d-flex col-md justify-content-end align-items-center title"><span class="typeFace text-color--alert">{{temperatureCurrent}}</span> &nbsp; &#8451;</div>
-        <div class="d-flex col-md justify-content-end align-items-center title"><span class="typeFace text-color--alert">{{temperatureForecast}}</span> &nbsp; &#8451;</div>
+  <div class="row my-5 typeFace title">
+    <div class="col-md">
+      <img
+        #iconTemp
+        src="{{ imgPath + 'temperature.png' }}"
+        alt=""
+        class="icon"
+        title="Temperature"
+      />
     </div>
-    
-    <div class="row my-5 typeFace title">
-        <div class="col-md">
-          <img #iconWindspeed src="{{imgPath + 'windspeed.svg'}}" alt="" class="icon" title="Windspeed" >
-        </div>
-        <div class="d-flex col-md justify-content-end align-items-center title"><span class="typeFace text-color--alert">{{windSpeedCurrent}}</span> &nbsp; km/h</div>
-        <div class="d-flex col-md justify-content-end align-items-center title"><span class="typeFace text-color--alert">{{windspeedForecast}}</span> &nbsp; km/h</div>
+    <div
+      class="d-flex col-md justify-content-center align-items-center title bg-white rounded-left"
+    >
+      <span class="typeFace text-color--alert">{{ temperatureCurrent }}</span>
+      &nbsp; <span class="text-info">&#8451;</span>
     </div>
+    <div
+      class="d-flex col-md justify-content-center align-items-center title bg-white rounded-right"
+    >
+      <span class="typeFace text-color--alert">{{ temperatureForecast }}</span>
+      &nbsp; <span class="text-info">&#8451;</span>
+    </div>
+  </div>
+
+  <div class="row my-5 typeFace title">
+    <div class="col-md">
+      <img
+        #iconWindspeed
+        src="{{ imgPath + 'windspeed.svg' }}"
+        alt=""
+        class="icon"
+        title="Windspeed"
+      />
+    </div>
+    <div
+      class="d-flex col-md justify-content-center align-items-center title bg-white rounded-left"
+    >
+      <span class="typeFace text-color--alert">{{ windSpeedCurrent }}</span>
+      &nbsp; <span class="text-info">km/h</span>
+    </div>
+    <div
+      class="d-flex col-md justify-content-center align-items-center title bg-white rounded-right"
+    >
+      <span class="typeFace text-color--alert">{{ windspeedForecast }}</span>
+      &nbsp; <span class="text-info">km/h</span>
+    </div>
+  </div>
 </div>
-    
